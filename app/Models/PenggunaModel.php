@@ -4,23 +4,23 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BukuModel extends Model
+class PenggunaModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'bukus';
+    protected $table            = 'tb_pengguna';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $protectFields    = false;
+    protected $allowedFields    = ['*'];
 
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    //protected $createdField  = 'created_at';
+    //protected $updatedField  = 'updated_at';
+    //protected $deletedField  = 'deleted_at';
 
     // Validation
     protected $validationRules      = [];
