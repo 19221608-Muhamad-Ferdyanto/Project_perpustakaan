@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\PenerbitModel;
 
 class PenerbitController extends BaseController
 {
@@ -10,16 +11,51 @@ class PenerbitController extends BaseController
     {
         //
     }
-    public function Nama()
+
+    public function create()
     {
-        //
+        $model = new PenerbitModel();
+        $data = [
+          'penerbit' => request()->getPost('penerbit'),
+          'kota' => request()->getPost('kota'),
+          
+        ];
+ 
+        $id = (int) request()->getPost('id');
+        if($id > 0){
+            $r = $model->update($id, $data);
+         }else{
+             $r = $model->insert($data);
+        }
+        if($r != false){
+          return redirect()->to(base_url('Penerbit'));
+        }
+     }
+ 
+     public function show(){
+         $m = new PenerbitModel();
+ 
+         return view('Penerbit/tampildata', [
+             'data_penerbit' => $m->findAll()
+         ]);
+     }
+ 
+     public function form(){
+         return view('Penerbit/form');
+     }
+ 
+     public function delete(){
+         $id = request()->getPost('id');
+         $m = new PenerbitModel();
+         $r = $m->delete($id);
+         return redirect()->to(base_url('Penerbit'));
+     }
+ 
+     public function edit($id){
+         $m = new PenerbitModel();
+         $data = $m->where('id', $id)->first();
+         return view('Penerbit/form', [
+             'data' => $data
+         ]);
+        }
     }
-    public function Tahun()
-    {
-        //
-    }
-    public function Nama_buku()
-    {
-        //
-    }
-}
