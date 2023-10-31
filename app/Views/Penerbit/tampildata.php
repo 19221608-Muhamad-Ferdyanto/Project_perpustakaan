@@ -1,4 +1,4 @@
-<a href="<?=base_url('/penerbit/form')?>">Tambah Data</a>
+<a href="<?=base_url('/Penerbit/form')?>">Tambah Data</a>
 <table border="1">
     <thead>
         <tr>
