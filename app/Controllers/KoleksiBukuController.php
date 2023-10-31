@@ -29,33 +29,33 @@ class KoleksiBukuController extends BaseController
              $r = $model->insert($data);
         }
         if($r != false){
-          return redirect()->to(base_url('koleksibuku'));
+          return redirect()->to(base_url('KoleksiBuku'));
         }
      }
  
      public function show(){
          $m = new KoleksiBukuModel();
  
-         return view('koleksibuku/tampildata', [
+         return view('KoleksiBuku/tampildata', [
              'data_koleksibuku' => $m->findAll()
          ]);
      }
  
      public function form(){
-         return view('koleksibuku/form');
+         return view('KoleksiBuku/form');
      }
  
      public function delete(){
          $id = request()->getPost('id');
          $m = new KoleksiBukuModel();
          $r = $m->delete($id);
-         return redirect()->to(base_url('koleksibuku'));
+         return redirect()->to(base_url('KoleksiBuku'));
      }
  
      public function edit($id){
          $m = new KoleksiBukuModel();
          $data = $m->where('id', $id)->first();
-         return view('koleksibuku/form', [
+         return view('KoleksiBuku/form', [
              'data' => $data
          ]);
         }

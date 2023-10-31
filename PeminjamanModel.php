@@ -4,23 +4,23 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PenerbitModel extends Model
+class PeminjamanModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tb_penerbit';
+    protected $table            = 'tb_peminjaman';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = ["*"];
+    protected $protectFields    = false;
+    protected $allowedFields    = ['*'];
 
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    //protected $createdField  = 'created_at';
+    //protected $updatedField  = 'updated_at';
+    //protected $deletedField  = 'deleted_at';
 
     // Validation
     protected $validationRules      = [];

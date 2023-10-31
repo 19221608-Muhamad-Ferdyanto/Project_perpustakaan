@@ -33,33 +33,33 @@ class BukuController extends BaseController
              $r = $model->insert($data);
         }
         if($r != false){
-          return redirect()->to(base_url('buku'));
+          return redirect()->to(base_url('Buku'));
         }
      }
  
      public function show(){
          $m = new BukuModel();
  
-         return view('buku/tampildata', [
+         return view('Buku/tampildata', [
              'data_buku' => $m->findAll()
          ]);
      }
  
      public function form(){
-         return view('buku/form');
+         return view('Buku/form');
      }
  
      public function delete(){
          $id = request()->getPost('id');
          $m = new BukuModel();
          $r = $m->delete($id);
-         return redirect()->to(base_url('buku'));
+         return redirect()->to(base_url('Buku'));
      }
  
      public function edit($id){
          $m = new BukuModel();
          $data = $m->where('id', $id)->first();
-         return view('buku/form', [
+         return view('Buku/form', [
              'data' => $data
          ]);
         }

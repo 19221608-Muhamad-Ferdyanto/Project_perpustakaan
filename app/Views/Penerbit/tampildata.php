@@ -1,4 +1,4 @@
-<a href="<?=base_url('/Penerbit/form')?>">Tambah Data</a>
+<a href="<?=base_url('PenerbitController')?>">Tambah Data</a>
 <table border="1">
     <thead>
         <tr>
@@ -12,9 +12,9 @@
             <tr>
                 <td><?=$baris['penerbit']?></td>
                 <td><?=$baris['kota']?></td>
-                <td><a href="<?=base_url('penerbit/edit/') . $baris['id'] ?>">edit</a></td>
+                <td><a href="<?=base_url('Penerbit/edit/') . $baris['id'] ?>">edit</a></td>
                 <td>
-                    <form onsubmit="return confirm('Are u sure want to delete this data?')" method="post" action="<?=base_url('penerbit/delete')?>">
+                    <form onsubmit="return confirm('Are u sure want to delete this data?')" method="post" action="<?=base_url('Penerbit/delete')?>">
                         <input type="hidden" name="id" value="<?=$baris['id']?>">
                         <button>Delete</button>
                     </form>

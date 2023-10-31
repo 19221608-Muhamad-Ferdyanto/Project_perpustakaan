@@ -35,13 +35,13 @@ class PenerbitController extends BaseController
      public function show(){
          $m = new PenerbitModel();
  
-         return view('/Penerbit/tampildata', [
+         return view('Penerbit/tampildata', [
              'data_penerbit' => $m->findAll()
          ]);
      }
  
      public function form(){
-         return view('/Penerbit/form');
+         return view('Penerbit/form');
      }
  
      public function delete(){
@@ -54,7 +54,7 @@ class PenerbitController extends BaseController
      public function edit($id){
          $m = new PenerbitModel();
          $data = $m->where('id', $id)->first();
-         return view('/Penerbit/form', [
+         return view('Penerbit/form', [
              'data' => $data
          ]);
         }

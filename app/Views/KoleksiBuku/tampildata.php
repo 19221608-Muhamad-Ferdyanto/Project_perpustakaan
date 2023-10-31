@@ -1,4 +1,4 @@
-<a href="<?=base_url('/koleksibuku/form')?>">Tambah Data</a>
+<a href="<?=base_url('/KoleksiBuku/form')?>">Tambah Data</a>
 <table border="1">
     <thead>
         <tr>
@@ -14,9 +14,9 @@
                 <td><?=$baris['tb_buku_id']?></td>
                 <td><?=$baris['nomor_koleksi']?></td>
                 <td><?=$baris['status_koleksi']?></td>
-                <td><a href="<?=base_url('koleksibuku/edit/') . $baris['id'] ?>">edit</a></td>
+                <td><a href="<?=base_url('KoleksiBuku/edit/') . $baris['id'] ?>">edit</a></td>
                 <td>
-                    <form onsubmit="return confirm('Are u sure want to delete this data?')" method="post" action="<?=base_url('koleksibuku/delete')?>">
+                    <form onsubmit="return confirm('Are u sure want to delete this data?')" method="post" action="<?=base_url('KoleksiBuku/delete')?>">
                         <input type="hidden" name="id" value="<?=$baris['id']?>">
                         <button>Delete</button>
                     </form>
