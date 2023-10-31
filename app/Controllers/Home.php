@@ -8,4 +8,19 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
+
+    public function dashboard ()
+    {
+        return view('dashboard/pustakawan', [
+            'pengguna' => session()->get('pengguna')]
+        );
+    }
+
+    public function dashboard_anggota () 
+    {
+        return view('dashboard/anggota',[
+            'anggota' => session()->get('anggota')
+    ]);
+            
+    }
 }
