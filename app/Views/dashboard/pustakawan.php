@@ -1,7 +1,7 @@
 <div>
     <h4>Selamat datang Pustakawan <?=$pengguna['nama_lengkap'] ?? ''?> - 
     <?php if( ($pengguna['tingkat'] ?? '') == 'PUS'){
-            echo "Pustakawan";
+            echo "pustakawan";
 
         }else{
             echo "Administrator";
